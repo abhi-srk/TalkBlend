@@ -11,18 +11,22 @@ dotenv.config();
 connectDB();
 const app = express();
 
-app.use(cors(
-  {
-    origin: [""],
-    methods: ["POST", "GET"],
-    credentials: true
-  }
-))
+// app.use(cors(
+//   {
+//     origin: [""],
+//     methods: ["POST", "GET"],
+//     credentials: true
+//   }
+// ))
 app.use(express.json()); // to accept json data
 
 // app.get("/", (req, res) => {
 //   res.send("API Running!");
 // });
+
+app.get("/", (req, res) => {
+  res.send("hello");
+})
 
 
 app.use("/api/user", userRoutes);
